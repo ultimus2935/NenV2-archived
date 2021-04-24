@@ -1,0 +1,25 @@
+{    
+    "invite": "bot invite link",
+    "vote": "discord.ly vote link",
+    "support": "nen official server invite link",
+    
+    "prefix": ["prefix 1", "prefix 2"],
+
+    "superids": [
+        0
+    ],
+
+    "dev_channels": [
+        0
+    ],
+
+    "pseudo_nsfw": [
+        0
+    ],
+
+    "welcome_messages": [
+        "welcome messages 1",
+        "welcome messages 2",
+        "welcome messages 3"
+    ]
+}

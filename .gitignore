@@ -1,0 +1,8 @@
+# vscode folder
+.vscode/
+
+# pycache folder
+__pycache__
+
+# .env file containing the bot token
+.env
