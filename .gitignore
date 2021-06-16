@@ -6,4 +6,3 @@ __pycache__
 
 # .env file containing the bot token
 .env
-test_data.json
