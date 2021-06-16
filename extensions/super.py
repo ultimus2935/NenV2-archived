@@ -63,7 +63,7 @@ class Super(commands.Cog):
                 if extension == 'all':
                     self.unloadCogs()
                     await ctx.send('`All Extensions have been unloaded, senpai!`') 
-     
+    
                 else:
                     if extension != 'super':  
                         self.client.unload_extension(f'extensions.{extension}')

@@ -15,6 +15,10 @@ class DoujinSearch(commands.Cog):
 
     @commands.command()
     async def tags(self, ctx, code: int):
+        if ctx.author.id in data['bannedids']:
+            await ctx.send(':no_entry_sign: **Sorry, but you are banned from using Nen!**\n **Please contact the owner on the official server to appeal for unban**')
+            return
+
         if isinstance(code, int):
             nsfwlogo = File("assets/images/nsfwlogo.png", filename="nsfwlogo.png")
 
@@ -59,12 +63,20 @@ class DoujinSearch(commands.Cog):
 
     @commands.command()
     async def random(self, ctx):
+        if ctx.author.id in data['bannedids']:
+            await ctx.send(':no_entry_sign: **Sorry, but you are banned from using Nen!**\n **Please contact the owner on the official server to appeal for unban**')
+            return
+
         code = nh.get_random_id()
 
         await self.info(ctx, code)
 
     @commands.command()
     async def info(self, ctx, code: int):
+        if ctx.author.id in data['bannedids']:
+            await ctx.send(':no_entry_sign: **Sorry, but you are banned from using Nen!**\n **Please contact the owner on the official server to appeal for unban**')
+            return
+
         if isinstance(code, int):
             nsfwlogo = File("assets/images/nsfwlogo.png", filename="nsfwlogo.png")
 
@@ -142,6 +154,10 @@ class DoujinSearch(commands.Cog):
 
     @commands.command()
     async def search(self, ctx, query, pageno = 1):
+        if ctx.author.id in data['bannedids']:
+            await ctx.send(':no_entry_sign: **Sorry, but you are banned from using Nen!**\n **Please contact the owner on the official server to appeal for unban**')
+            return
+
         doujinlist = []
         doujinlist.extend(nh.search(query = query, page = 1, sort_by = 'popular'))
         doujinlist.extend(nh.search(query = query, page = 2, sort_by = 'popular'))

@@ -7,7 +7,6 @@ class helpText(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-
     main_title = "General Help"
     mainhelp = f"""
 **Please use `n.help [category]` for more information**
@@ -30,7 +29,6 @@ Please use the command in an NSFW or Pseudo-NSFW
 channel to be able to see the images 
     ```
     **```
-Nen is currently under development
 If you find any issues, or have suggestions,
 please feel free to join the official server
     ```**
@@ -53,7 +51,7 @@ please feel free to join the official server
     readhelp = """
 **Nen's Special Feature!!**
 
-`n.read [code]`: 
+`n.read [code] [optional: page_number]`: 
 Special feature of Nen where you can read
 any doujin of you choice on discord itself
 
@@ -76,7 +74,6 @@ The function of the reaction controls are as follows:
 `n.embed "[title]" "[description]"`: **Create custom embeds on the flow**
     """
 
-    # Reddit Commands are currently disabled 
     reddit_title = "Reddit Commands"
     reddithelp = """
 ***REDDIT COMMANDS ARE CURRENTLY DISABLED DUE TO ISSUES WITH THE API***

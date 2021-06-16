@@ -1,22 +1,26 @@
 import discord
+
 from discord import Embed
+
 from discord import Color
 from discord.ext import commands
 
 import json
 
-from extensions.helptext import helpText as ht
+from helptext import helpText as ht
 
 data = json.load(open('data.json', 'r'))
 
-class   Help(commands.Cog):
+class Help(commands.Cog):
     def __init__(self, client):
         self.client = client
 
     @commands.command()
     async def help(self, ctx, *, param = ''):
-
-
+        if ctx.author.id in data['bannedids']:
+            await ctx.send(':no_entry_sign: **Sorry, but you are banned from using Nen!**\n **Please contact the owner on the official server to appeal for unban**')
+            return
+            
         embed = Embed()
         embed.color = Color.darker_gray()
 
@@ -35,7 +39,6 @@ class   Help(commands.Cog):
             embed.title = f'Nen sent senpai some help!\n\n{ht.misc_title}'
             embed.description = ht.mischelp
 
-        # n.help reddit --- currently disabled
         elif param == 'reddit':
             embed.title = f'Nen sent senpai some help!\n\n{ht.reddit_title}'
             embed.description = ht.reddithelp

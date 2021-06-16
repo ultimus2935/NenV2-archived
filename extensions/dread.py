@@ -18,6 +18,10 @@ class DoujinRead(commands.Cog):
 
     @commands.command()
     async def read(self, ctx, code: int):
+        if ctx.author.id in data['bannedids']:
+            await ctx.send(':no_entry_sign: **Sorry, but you are banned from using Nen!**\n **Please contact the owner on the official server to appeal for unban**')
+            return
+
         if ctx.channel.is_nsfw() or ctx.channel.id in data['pseudo_nsfw']:
             if isinstance(code, int):
                 try:
@@ -53,7 +57,6 @@ class DoujinRead(commands.Cog):
 
             else: await ctx.send('`I don\'t think thats a code, senpai....`')
         else: await ctx.send("`Sorry but senpai needs to be in a NSFW channel to read this :(`")
-        
 
 def setup(client):
     client.add_cog(DoujinRead(client))
